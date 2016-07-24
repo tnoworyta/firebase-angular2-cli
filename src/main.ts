@@ -2,6 +2,7 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
 import { AppComponent, environment } from './app/';
 import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 
 if (environment.production) {
@@ -16,5 +17,7 @@ bootstrap(AppComponent, [
     authDomain: "mdoc1.firebaseapp.com",
     databaseURL: "https://mdoc1.firebaseio.com",
     storageBucket: "project-7103516944652309740.appspot.com"
-  })
+  }),
+  disableDeprecatedForms(),
+  provideForms()
 ]);
