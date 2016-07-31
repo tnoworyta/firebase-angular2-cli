@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { NgForm }    from '@angular/forms';
 import { User }    from './../user';
 import { AngularFire } from 'angularfire2';
@@ -14,18 +14,16 @@ export class LoginComponent implements OnInit {
 
   model = new User('', '');
 
-  constructor(public af: AngularFire) { }
+  constructor(public af: AngularFire, private router: Router) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
     console.log(this.model);
-    this.af.auth.login({ email: this.model.email, password: this.model.password });
-    this.model = new User('', '');
-  }
-
-  logout() {
-    this.af.auth.logout()
+    this.af.auth.login({ email: this.model.email, password: this.model.password }).then(() => {
+      this.model = new User('', '');
+      this.router.navigate(['/items'])
+    });
   }
 }
