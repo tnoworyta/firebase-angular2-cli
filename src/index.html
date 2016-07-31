@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+  <base href="/">
   <meta charset="utf-8">
   <title>FirebaseAngular2Cli</title>
   <base href="/">
@@ -13,7 +14,7 @@
 </head>
 <body>
   <app-root>Loading...</app-root>
-  
+
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
     {{/each}}
@@ -22,6 +23,6 @@
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
-  
+
 </body>
 </html>

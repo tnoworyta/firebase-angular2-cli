@@ -3,6 +3,7 @@ import { enableProdMode } from '@angular/core';
 import { AppComponent, environment } from './app/';
 import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
+import { appRouterProviders } from './app/app.routes';
 
 
 if (environment.production) {
@@ -19,5 +20,6 @@ bootstrap(AppComponent, [
     storageBucket: "project-7103516944652309740.appspot.com"
   }),
   disableDeprecatedForms(),
-  provideForms()
+  provideForms(),
+  appRouterProviders
 ]);
