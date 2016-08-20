@@ -47,6 +47,7 @@ const barrels: string[] = [
   'app/login',
   'app/items',
   'app/logout',
+  'app/conditional-router-link',
   /** @cli-barrel */
 ];
 

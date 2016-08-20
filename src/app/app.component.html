@@ -1,10 +1,9 @@
 <h1>
   {{title}}
 </h1>
-
 <nav>
-  <a routerLink="/login" routerLinkActive="active" *ngIf="!(af.auth | async)?.uid">Login</a>
-  <a routerLink="/items" routerLinkActive="active" *ngIf="(af.auth | async)?.uid">Items</a>
+  <conditional-router-link routerLink="/login" label="Login" requiresLogin="false"></conditional-router-link>
+  <conditional-router-link routerLink="/items" label="Items" requiresLogin="true"></conditional-router-link>
   <app-logout></app-logout>
 </nav>
 
