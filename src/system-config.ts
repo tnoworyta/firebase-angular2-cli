@@ -10,7 +10,8 @@
 /** Map relative paths to URLs. */
 const map: any = {
   'firebase': 'vendor/firebase/firebase.js',
-  'angularfire2': 'vendor/angularfire2'
+  'angularfire2': 'vendor/angularfire2',
+  'ng2-dnd': 'vendor/ng2-dnd'
 };
 
 /** User packages configuration. */
@@ -18,7 +19,8 @@ const packages: any = {
   angularfire2: {
     defaultExtension: 'js',
     main: 'angularfire2.js'
-  }
+  },
+  'ng2-dnd': { defaultExtension: 'js', main: 'ng2-dnd.js' }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

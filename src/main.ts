@@ -4,7 +4,7 @@ import { AppComponent, environment } from './app/';
 import { FIREBASE_PROVIDERS, defaultFirebase, AngularFire, AuthMethods, AuthProviders, firebaseAuthConfig } from 'angularfire2';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { appRouterProviders } from './app/app.routes';
-
+import { DND_PROVIDERS } from 'ng2-dnd/ng2-dnd';
 
 if (environment.production) {
   enableProdMode();
@@ -25,5 +25,6 @@ bootstrap(AppComponent, [
   }),
   disableDeprecatedForms(),
   provideForms(),
-  appRouterProviders
+  appRouterProviders,
+  DND_PROVIDERS
 ]);
