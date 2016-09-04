@@ -1,6 +1,6 @@
 # FirebaseAngular2Cli
 
-# Installation
+## Installation
 * Make sure that the NodeJS is at least (`node -v`): `v5.10.1`
 * `npm install -g angular-cli`
 * `npm install -g typings` 
