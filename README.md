@@ -1,13 +1,11 @@
 # FirebaseAngular2Cli
 
 # Installation
-Make sure that the NodeJS is at least (`node -v`):
-`v5.10.1`
-then install base packages:
-`npm install -g angular-cli`
-`npm install -g typings` 
-`npm install -g typescript@2.0`
-`npm i`
+* Make sure that the NodeJS is at least (`node -v`): `v5.10.1`
+* `npm install -g angular-cli`
+* `npm install -g typings` 
+* `npm install -g typescript@2.0`
+* `npm i`
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.10.
 
