@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { DND_DIRECTIVES } from 'ng2-dnd/ng2-dnd';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import {AddItemComponent} from "../add-item/add-item.component";
 import {ItemComponent} from "../item/item.component";
 
