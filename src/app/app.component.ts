@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { AngularFire } from 'angularfire2';
+import { LoginComponent } from './login/login.component'
+import { ItemsComponent } from "./items/items.component";
+import { LogoutComponent } from "./logout/logout.component";
+import {AddItemComponent} from "./add-item/add-item.component";
 
 @Component({
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  styleUrls: ['app.component.css'],
+  directives: [ROUTER_DIRECTIVES, LoginComponent, ItemsComponent, LogoutComponent]
 })
 export class AppComponent {
-  items: FirebaseListObservable<any[]>;
+  title = 'FirebaseAngular2Cli';
 
-  constructor(af: AngularFire) {
-    this.items = af.database.list('items');
-  }
-  title = 'app works!';
+  constructor(public af: AngularFire) { }
 }
