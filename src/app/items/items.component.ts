@@ -14,26 +14,31 @@ import {ItemComponent} from "../item/item.component";
 export class ItemsComponent implements OnInit {
 
   items: FirebaseListObservable<any[]>;
+  pendingItems: FirebaseListObservable<any[]>;
+  doneItems: FirebaseListObservable<any[]>;
   item: FirebaseObjectObservable<any[]>;
 
   constructor(af: AngularFire) {
     this.items = af.database.list('items');
+    this.pendingItems = af.database.list('items', {
+      query: {
+        orderByChild: 'status',
+        equalTo: 'pending'
+      }
+    });
+    this.doneItems = af.database.list('items', {
+      query: {
+        orderByChild: 'status',
+        equalTo: 'done'
+      }
+    });
   }
 
   ngOnInit() {
   }
 
   markAsDone($event){
-    console.log('dropped', $event.dragData);
-
-    //console.log(this.items.filter(it => it.$key === $event.dragData.$key));
-
-    // console.log(z)
-    // //console.log($event.dragData)
-    // //this.item = $event.dragData
-    // //this.items.
-    //
-    // //this.item.set({a: 1})
+    this.items.update($event.dragData.$key, { status: 'done' });
   }
 
 }
