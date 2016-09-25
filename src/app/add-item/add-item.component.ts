@@ -23,7 +23,11 @@ export class AddItemComponent implements OnInit {
 
   addItem($event) {
     if($event.keyCode === 13){
-      this.items.push({ desc: this.itemWrapper.desc, created_at: new Date().getTime() });
+      this.items.push({
+        desc: this.itemWrapper.desc,
+        status: 'pending',
+        created_at: new Date().getTime()
+      });
       this.itemWrapper.desc = undefined;
     }
   }
