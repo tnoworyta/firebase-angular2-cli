@@ -1,1 +1,1 @@
-<a href="javascript:void(0)" routerLink="routerLink" routerLinkActive="active" *ngIf="(requiresLogin == 'true' && ((af.auth | async)?.uid)) || (requiresLogin == 'false' && !((af.auth | async)?.uid))">{{label}}</a>
+<a href="javascript:void(0)" *ngIf="(requiresLogin == 'true' && ((af.auth | async)?.uid)) || (requiresLogin == 'false' && !((af.auth | async)?.uid))">{{label}}</a>
